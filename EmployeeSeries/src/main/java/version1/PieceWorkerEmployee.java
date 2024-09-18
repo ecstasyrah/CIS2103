@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.employeeseries.version1;
+package version1;
 
 /**
  *
@@ -17,6 +17,18 @@ public class PieceWorkerEmployee {
     public PieceWorkerEmployee() {
     }
 
+    public PieceWorkerEmployee(String empName, int empID) {
+    
+    }
+
+    public PieceWorkerEmployee(int totalPcsFin, double ratePerPc, String empName, int empID) {
+        this.totalPcsFin = totalPcsFin;
+        this.ratePerPc = ratePerPc;
+        this.empName = empName;
+        this.empID = empID;
+    }
+    
+    
     public int getTotalPcsFin() {
         return totalPcsFin;
     }
@@ -71,20 +83,16 @@ public class PieceWorkerEmployee {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         
-        sb.append("Employee ID: ");
-        sb.append(this.empID);
-        sb.append("\n");
-        sb.append("Employee Name: ");
-        sb.append(this.empName);
-        sb.append("\n");
-        sb.append("Rate Per Piece: ");
-        sb.append(this.ratePerPc);
-        sb.append("\n");
-        sb.append("Total Pieces Finished: ");
-        sb.append(this.totalPcsFin);
-        sb.append("\n");
-        sb.append("Total salary: ");
-        sb.append(computeSalary());
+        sb.append("Employee ID: ")
+            .append(this.empID)
+            .append("\nEmployee Name: ")
+            .append(this.empName)
+            .append("\nRate Per Piece: ")
+            .append(this.ratePerPc)
+            .append("\nTotal Pieces Finished: ")
+            .append(this.totalPcsFin)
+            .append("\nTotal salary: ")
+            .append(computeSalary());
         
         return sb.toString();
     }

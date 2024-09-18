@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.employeeseries.version1;
+package version1;
 
 /**
  *
@@ -15,6 +15,17 @@ public class HourlyEmployee {
     private int empID;
 
     public HourlyEmployee() {
+        
+    }
+    public HourlyEmployee(String empName, int empID) {
+    
+    }
+  
+    public HourlyEmployee(float totalHrsWorked, double ratePerHour, String empName, int empID) {
+        this.totalHrsWorked = totalHrsWorked;
+        this.ratePerHour = ratePerHour;
+        this.empName = empName;
+        this.empID = empID;
     }
 
     public float getTotalHrsWorked() {
@@ -74,20 +85,16 @@ public class HourlyEmployee {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         
-        sb.append("Employee ID: ");
-        sb.append(this.empID);
-        sb.append("\n");
-        sb.append("Employee Name: ");
-        sb.append(this.empName);
-        sb.append("\n");
-        sb.append("Rate Per Hour:");
-        sb.append(this.ratePerHour);
-        sb.append("\n");
-        sb.append("Total hours worked: ");
-        sb.append(this.totalHrsWorked);
-        sb.append("\n");
-        sb.append("Total salary: ");
-        sb.append(computeSalary());
+        sb.append("Employee ID: ")
+            .append(this.empID)
+            .append("\nEmployee Name: ")
+            .append(this.empName)
+            .append("\nRate Per Hour:")
+            .append(this.ratePerHour)
+            .append("\nTotal hours worked: ")
+            .append(this.totalHrsWorked)
+            .append("\nTotal salary: ")
+            .append(computeSalary());
         
         return sb.toString();
     }

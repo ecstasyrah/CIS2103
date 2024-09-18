@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.employeeseries.version1;
+package version1;
 
 /**
  *
@@ -17,6 +17,17 @@ public class BasedPlusCommissionEmployee {
     public BasedPlusCommissionEmployee() {
     }
 
+    public BasedPlusCommissionEmployee(String empName, int empID) {
+    
+    }
+
+    public BasedPlusCommissionEmployee(double totalSales, double baseSalary, String empName, int empID) {
+        this.totalSales = totalSales;
+        this.baseSalary = baseSalary;
+        this.empName = empName;
+        this.empID = empID;
+    }
+    
     public double getTotalSales() {
         return totalSales;
     }
@@ -50,26 +61,22 @@ public class BasedPlusCommissionEmployee {
     }
     
     public double computeSalary(){
-        double salary = 0.0;
+        double rate = 0;
         
         if(this.totalSales < 0){
             System.out.println("Fire the employee.");
         }else if(this.totalSales < 10000){
-            salary = this.totalSales * 0.05;
-            salary += this.baseSalary;
+            rate = 0.05;
         }else if(this.totalSales < 100000 && this.totalSales >= 10000){
-            salary = this.totalSales * 0.10;
-            salary += this.baseSalary;
+            rate = 0.10;
         }else if(this.totalSales < 1000000){
-            salary = this.totalSales * 0.20;
-            salary += this.baseSalary;
+            rate = 0.20;
         }else{
-            salary = this.totalSales * 0.30;
-            salary += this.baseSalary;
+            rate = 0.30;
         }
         
         
-        return salary;
+        return this.baseSalary + (rate * this.totalSales);
     }
     
     public void display(){
@@ -80,20 +87,16 @@ public class BasedPlusCommissionEmployee {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         
-        sb.append("Employee ID: ");
-        sb.append(this.empID);
-        sb.append("\n");
-        sb.append("Employee Name: ");
-        sb.append(this.empName);
-        sb.append("\n");
-        sb.append("Base salary: ");
-        sb.append(this.baseSalary);
-        sb.append("\n");
-        sb.append("Total Sales: ");
-        sb.append(this.totalSales);
-        sb.append("\n");
-        sb.append("Total salary: ");
-        sb.append(computeSalary());
+        sb.append("Employee ID: ")
+                .append(this.empID)
+                .append("\nEmployee Name: ")
+                .append(this.empName)
+                .append("\nBase salary: ")
+                .append(this.baseSalary)
+                .append("\nTotal Sales: ")
+                .append(this.totalSales)
+                .append("\nTotal salary: ")
+                .append(computeSalary());
         
         return sb.toString();
     }
