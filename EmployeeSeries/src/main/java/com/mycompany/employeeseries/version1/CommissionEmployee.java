@@ -50,9 +50,9 @@ public class CommissionEmployee {
             System.out.println("Fire the employee.");
         }else if(this.totalSales < 10000){
             salary = this.totalSales * 0.05;
-        }else if(this.totalSales < 100000 && this.totalSales > 10000){
+        }else if(this.totalSales < 100000 && this.totalSales >= 10000){
             salary = this.totalSales * 0.10;
-        }else if(this.totalSales < 1000000 && this.totalSales > 100000){
+        }else if(this.totalSales < 1000000){
             salary = this.totalSales * 0.20;
         }else{
             salary = this.totalSales * 0.30;

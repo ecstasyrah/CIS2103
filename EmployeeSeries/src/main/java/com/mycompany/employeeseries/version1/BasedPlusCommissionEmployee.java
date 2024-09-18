@@ -61,10 +61,10 @@ public class BasedPlusCommissionEmployee {
         }else if(this.totalSales < 10000){
             salary = this.totalSales * 0.05;
             salary += this.baseSalary;
-        }else if(this.totalSales < 100000 && this.totalSales > 10000){
+        }else if(this.totalSales < 100000 && this.totalSales >= 10000){
             salary = this.totalSales * 0.10;
             salary += this.baseSalary;
-        }else if(this.totalSales < 1000000 && this.totalSales > 100000){
+        }else if(this.totalSales < 1000000){
             salary = this.totalSales * 0.20;
             salary += this.baseSalary;
         }else{

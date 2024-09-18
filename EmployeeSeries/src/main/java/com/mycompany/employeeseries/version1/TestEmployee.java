@@ -16,13 +16,13 @@ public class TestEmployee {
         CommissionEmployee emp3 = new CommissionEmployee(100000,"Dot", 345);
         BasedPlusCommissionEmployee emp4 = new BasedPlusCommissionEmployee(100000, 5000,"Say", 456);
 
-        System.out.println("Hourly Employee \n");
+        System.out.println("Hourly Employee");
         emp1.display();
-        System.out.println("\nPiece Worker Employee \n");
+        System.out.println("\nPiece Worker Employee");
         emp2.display();
-        System.out.println("\nCommission Employee \n");
+        System.out.println("\nCommission Employee");
         emp3.display();
-        System.out.println("\nBased plus Commission Employee \n");
+        System.out.println("\nBased plus Commission Employee");
         emp4.display();
     }
     
