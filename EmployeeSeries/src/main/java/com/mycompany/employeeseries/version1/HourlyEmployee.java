@@ -14,11 +14,7 @@ public class HourlyEmployee {
     private String empName;
     private int empID;
 
-    public HourlyEmployee(float totalHrsWorked, double ratePerHour, String empName, int empID) {
-        this.totalHrsWorked = totalHrsWorked;
-        this.ratePerHour = ratePerHour;
-        this.empName = empName;
-        this.empID = empID;
+    public HourlyEmployee() {
     }
 
     public float getTotalHrsWorked() {
@@ -83,6 +79,12 @@ public class HourlyEmployee {
         sb.append("\n");
         sb.append("Employee Name: ");
         sb.append(this.empName);
+        sb.append("\n");
+        sb.append("Rate Per Hour:");
+        sb.append(this.ratePerHour);
+        sb.append("\n");
+        sb.append("Total hours worked: ");
+        sb.append(this.totalHrsWorked);
         sb.append("\n");
         sb.append("Total salary: ");
         sb.append(computeSalary());

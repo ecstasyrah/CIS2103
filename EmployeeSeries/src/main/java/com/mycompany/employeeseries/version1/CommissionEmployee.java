@@ -13,10 +13,7 @@ public class CommissionEmployee {
     private String empName;
     private int empId;
 
-    public CommissionEmployee(double totalSales, String empName, int empId) {
-        this.totalSales = totalSales;
-        this.empName = empName;
-        this.empId = empId;
+    public CommissionEmployee() {
     }
 
     public double getTotalSales() {
@@ -73,6 +70,9 @@ public class CommissionEmployee {
         sb.append("\n");
         sb.append("Employee Name: ");
         sb.append(this.empName);
+        sb.append("\n");
+        sb.append("Total sales: ");
+        sb.append(this.totalSales);
         sb.append("\n");
         sb.append("Total salary: ");
         sb.append(computeSalary());

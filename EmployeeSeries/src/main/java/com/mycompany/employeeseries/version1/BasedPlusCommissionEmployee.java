@@ -14,11 +14,7 @@ public class BasedPlusCommissionEmployee {
     private String empName;
     private int empID;
 
-    public BasedPlusCommissionEmployee(double totalSales, double baseSalary, String empName, int empID) {
-        this.totalSales = totalSales;
-        this.baseSalary = baseSalary;
-        this.empName = empName;
-        this.empID = empID;
+    public BasedPlusCommissionEmployee() {
     }
 
     public double getTotalSales() {
@@ -89,6 +85,12 @@ public class BasedPlusCommissionEmployee {
         sb.append("\n");
         sb.append("Employee Name: ");
         sb.append(this.empName);
+        sb.append("\n");
+        sb.append("Base salary: ");
+        sb.append(this.baseSalary);
+        sb.append("\n");
+        sb.append("Total Sales: ");
+        sb.append(this.totalSales);
         sb.append("\n");
         sb.append("Total salary: ");
         sb.append(computeSalary());

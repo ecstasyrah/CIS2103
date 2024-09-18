@@ -14,11 +14,7 @@ public class PieceWorkerEmployee {
     private String empName;
     private int empID;
 
-    public PieceWorkerEmployee(int totalPcsFin, double ratePerPc, String empName, int empID) {
-        this.totalPcsFin = totalPcsFin;
-        this.ratePerPc = ratePerPc;
-        this.empName = empName;
-        this.empID = empID;
+    public PieceWorkerEmployee() {
     }
 
     public int getTotalPcsFin() {
@@ -54,16 +50,15 @@ public class PieceWorkerEmployee {
     }
     
     public double computeSalary(){
-        double bonus;
-        double bonusPay;
-        double salary;
-        if(this.totalPcsFin > 100){
-            bonus = this.totalPcsFin - 100;
-            this.totalPcsFin -= bonus;
-            bonusPay = bonus * (this.ratePerPc * 10);
-            salary = (this.ratePerPc * this.totalPcsFin) + bonusPay;
-        }else{
+        double bonus = 0;
+        double salary = 0;
+        if(this.totalPcsFin < 100){
             salary = this.ratePerPc * this.totalPcsFin;
+        }else{
+            salary = (this.totalPcsFin * this.ratePerPc);
+            int hundredPcs = this.totalPcsFin / 100;
+            bonus = hundredPcs * 10 * this.ratePerPc;
+            salary += bonus;
         }
         return salary;
     }
@@ -81,6 +76,12 @@ public class PieceWorkerEmployee {
         sb.append("\n");
         sb.append("Employee Name: ");
         sb.append(this.empName);
+        sb.append("\n");
+        sb.append("Rate Per Piece: ");
+        sb.append(this.ratePerPc);
+        sb.append("\n");
+        sb.append("Total Pieces Finished: ");
+        sb.append(this.totalPcsFin);
         sb.append("\n");
         sb.append("Total salary: ");
         sb.append(computeSalary());
