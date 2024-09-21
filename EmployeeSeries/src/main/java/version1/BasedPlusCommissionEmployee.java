@@ -18,7 +18,8 @@ public class BasedPlusCommissionEmployee {
     }
 
     public BasedPlusCommissionEmployee(String empName, int empID) {
-    
+        this.empName = empName;
+        this.empID = empID;
     }
 
     public BasedPlusCommissionEmployee(double totalSales, double baseSalary, String empName, int empID) {

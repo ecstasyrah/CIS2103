@@ -18,7 +18,7 @@ public class PieceWorkerEmployee {
     }
 
     public PieceWorkerEmployee(String empName, int empID) {
-    
+    this();
     }
 
     public PieceWorkerEmployee(int totalPcsFin, double ratePerPc, String empName, int empID) {

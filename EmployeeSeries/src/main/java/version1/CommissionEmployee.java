@@ -16,7 +16,7 @@ public class CommissionEmployee {
     public CommissionEmployee() {
     }
     public CommissionEmployee(String empName, int empID) {
-    
+        this();
     }
 
     public CommissionEmployee(double totalSales, String empName, int empId) {

@@ -11,38 +11,66 @@ package version1;
 public class TestEmployee {
     
     public static void main(String[] args){
-        HourlyEmployee emp1 = new HourlyEmployee();
-        PieceWorkerEmployee emp2 = new PieceWorkerEmployee();
-        CommissionEmployee emp3 = new CommissionEmployee();
-        BasedPlusCommissionEmployee emp4 = new BasedPlusCommissionEmployee();
+        HourlyEmployee empHE1 = new HourlyEmployee();
+        PieceWorkerEmployee empPWE1 = new PieceWorkerEmployee();
+        CommissionEmployee empCE1 = new CommissionEmployee();
+        BasedPlusCommissionEmployee empBPCE1 = new BasedPlusCommissionEmployee();
         
-        emp1.setEmpID(123);
-        emp1.setEmpName("Sarah");
-        emp1.setRatePerHour(100);
-        emp1.setTotalHrsWorked(41);
+       
+        empHE1.setEmpID(123);
+        empHE1.setEmpName("Sarah");
+        empHE1.setRatePerHour(100);
+        empHE1.setTotalHrsWorked(41);
         
-        emp2.setEmpID(234);
-        emp2.setEmpName("Alfred");
-        emp2.setRatePerPc(100);
-        emp2.setTotalPcsFin(101);
+        empPWE1.setEmpID(234);
+        empPWE1.setEmpName("Alfred");
+        empPWE1.setRatePerPc(100);
+        empPWE1.setTotalPcsFin(101);
         
-        emp3.setEmpId(345);
-        emp3.setEmpName("Dot");
-        emp3.setTotalSales(100000);
+        empCE1.setEmpId(345);
+        empCE1.setEmpName("Dot");
+        empCE1.setTotalSales(100000);
         
-        emp4.setEmpID(456);
-        emp4.setEmpName("Say");
-        emp4.setBaseSalary(5000);
-        emp4.setTotalSales(100000);
+        empBPCE1.setEmpID(456);
+        empBPCE1.setEmpName("Say");
+        empBPCE1.setBaseSalary(5000);
+        empBPCE1.setTotalSales(100000);
+        
+        HourlyEmployee empHE2 = new HourlyEmployee("Saoirse", 124);
+        PieceWorkerEmployee empPWE2 = new PieceWorkerEmployee("Jarren", 235);
+        CommissionEmployee empCE2 = new CommissionEmployee("Sofia",346);
+        BasedPlusCommissionEmployee empBPCE2 = new BasedPlusCommissionEmployee("Colet",457);
+        
+        empHE2.setRatePerHour(100);
+        empHE2.setTotalHrsWorked(45);
+        empPWE2.setRatePerPc(100);
+        empPWE2.setTotalPcsFin(99);
+        empCE2.setTotalSales(10000);
+        empBPCE2.setBaseSalary(5000);
+        empBPCE2.setTotalSales(10000);
+        
+        HourlyEmployee empHE3 = new HourlyEmployee(100,51,"Jade", 125);
+        PieceWorkerEmployee empPWE3 = new PieceWorkerEmployee(105,100,"Shai", 236);
+        CommissionEmployee empCE3 = new CommissionEmployee(1230000,"Sheena", 347);
+        BasedPlusCommissionEmployee empBPCE3 = new BasedPlusCommissionEmployee(5000,12000,"Aiah", 458);
+        
 
         System.out.println("----Hourly Employee----");
-        emp1.display();
+        empHE1.display();
+        empHE2.display();
+        empHE3.display();
         System.out.println("\n----Piece Worker Employee----");
-        emp2.display();
+        empPWE1.display();
+        empPWE2.display();
+        empPWE3.display();
         System.out.println("\n----Commission Employee----");
-        emp3.display();
+        empCE1.display();
+        empCE2.display();
+        empCE3.display();
         System.out.println("\n----Based plus Commission Employee----");
-        emp4.display();
+        empBPCE1.display();
+        empBPCE2.display();
+        empBPCE3.display();
     }
     
     

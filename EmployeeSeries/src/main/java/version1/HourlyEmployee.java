@@ -18,7 +18,7 @@ public class HourlyEmployee {
         
     }
     public HourlyEmployee(String empName, int empID) {
-    
+        this();
     }
   
     public HourlyEmployee(float totalHrsWorked, double ratePerHour, String empName, int empID) {
