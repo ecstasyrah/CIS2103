@@ -108,6 +108,15 @@ public class vehicle {
     
     @Override
     public String toString() {
-        return "The " + this.color +" "+this.manufacturer +" "+ this.model + " with a plate No. "+ this.plateNumber + " is running from " + this.currSpeed + "kph to " + this.topSpeed + "kph.";
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("\n\nModel: ").append(this.model)
+                .append("\nColor: ").append(this.color)
+                .append("\nManufacturer: ").append(this.manufacturer)
+                .append("\nPlate Number: ").append(this.plateNumber)
+                .append("\nCurrent Speed: ").append(this.currSpeed)
+                .append("\nTop Speed: ").append(this.topSpeed);
+   
+        return sb.toString();
     }
 }
