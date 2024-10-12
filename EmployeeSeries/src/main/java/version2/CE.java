@@ -13,13 +13,14 @@ public class CE {
     private String empName;
     private int empId;
 
-    public CommissionEmployee() {
+    public CE() {
     }
-    public CommissionEmployee(String empName, int empID) {
-        this();
+    public CE(String empName, int empId) {
+        this.empId = empId;
+        this.empName = empName;
     }
 
-    public CommissionEmployee(double totalSales, String empName, int empId) {
+    public CE(double totalSales, String empName, int empId) {
         this.totalSales = totalSales;
         this.empName = empName;
         this.empId = empId;

@@ -14,14 +14,14 @@ public class PWE {
     private String empName;
     private int empID;
 
-    public PieceWorkerEmployee() {
+    public PWE() {
     }
 
-    public PieceWorkerEmployee(String empName, int empID) {
-    this();
+    public PWE(String empName, int empID) {
+        this();
     }
 
-    public PieceWorkerEmployee(int totalPcsFin, double ratePerPc, String empName, int empID) {
+    public PWE(int totalPcsFin, double ratePerPc, String empName, int empID) {
         this.totalPcsFin = totalPcsFin;
         this.ratePerPc = ratePerPc;
         this.empName = empName;

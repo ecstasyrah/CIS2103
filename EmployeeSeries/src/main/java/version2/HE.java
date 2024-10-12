@@ -14,14 +14,14 @@ public class HE {
     private String empName;
     private int empID;
 
-    public HourlyEmployee() {
+    public HE() {
         
     }
-    public HourlyEmployee(String empName, int empID) {
+    public HE(String empName, int empID) {
         this();
     }
   
-    public HourlyEmployee(float totalHrsWorked, double ratePerHour, String empName, int empID) {
+    public HE(float totalHrsWorked, double ratePerHour, String empName, int empID) {
         this.totalHrsWorked = totalHrsWorked;
         this.ratePerHour = ratePerHour;
         this.empName = empName;

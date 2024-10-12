@@ -116,7 +116,11 @@ public class vehicle {
                 .append("\nPlate Number: ").append(this.plateNumber)
                 .append("\nCurrent Speed: ").append(this.currSpeed)
                 .append("\nTop Speed: ").append(this.topSpeed);
-   
+        if(disabled() == false){
+            sb.append("\nCar is powered off");
+        }else{
+            sb.append("\nVroom Vroom");
+        }
         return sb.toString();
     }
 }

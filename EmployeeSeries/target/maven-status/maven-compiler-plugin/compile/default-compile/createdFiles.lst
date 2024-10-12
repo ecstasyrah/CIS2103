@@ -1,7 +1,11 @@
 version1\PieceWorkerEmployee.class
 version1\HourlyEmployee.class
 version1\TestEmployee.class
+version2\BPCE.class
+version2\CE.class
 version2\Employee.class
 com\mycompany\employeeseries\EmployeeSeries.class
+version2\HE.class
+version2\PWE.class
 version1\CommissionEmployee.class
 version1\BasedPlusCommissionEmployee.class
