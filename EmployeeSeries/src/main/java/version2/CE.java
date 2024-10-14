@@ -76,14 +76,12 @@ public class CE {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         
-        sb.append("Employee ID: ")
+        sb.append("\nEmployee ID: ")
             .append(this.empId)
             .append("\nEmployee Name: ")
             .append(this.empName)
-            .append("\nTotal sales: ")
-            .append(this.totalSales)
-            .append("\nTotal salary: ")
-            .append(computeSalary());
+            .append("\nTotal sales: $")
+            .append(this.totalSales);
         
         return sb.toString();
     }

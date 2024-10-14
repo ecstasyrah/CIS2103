@@ -12,20 +12,21 @@ public class PWE {
     private int totalPcsFin;
     private double ratePerPc;
     private String empName;
-    private int empID;
+    private int empId;
 
     public PWE() {
     }
 
-    public PWE(String empName, int empID) {
-        this();
+    public PWE(String empName, int empId) {
+        this.empId = empId;
+        this.empName = empName;
     }
 
-    public PWE(int totalPcsFin, double ratePerPc, String empName, int empID) {
+    public PWE(int totalPcsFin, double ratePerPc, String empName, int empId) {
         this.totalPcsFin = totalPcsFin;
         this.ratePerPc = ratePerPc;
         this.empName = empName;
-        this.empID = empID;
+        this.empId = empId;
     }
     
     
@@ -53,17 +54,17 @@ public class PWE {
         this.empName = empName;
     }
 
-    public int getEmpID() {
-        return empID;
+    public int getEmpId() {
+        return empId;
     }
 
-    public void setEmpID(int empID) {
-        this.empID = empID;
+    public void setEmpId(int empId) {
+        this.empId = empId;
     }
     
     public double computeSalary(){
-        double bonus = 0;
-        double salary = 0;
+        double bonus;
+        double salary;
         if(this.totalPcsFin < 100){
             salary = this.ratePerPc * this.totalPcsFin;
         }else{
@@ -83,15 +84,15 @@ public class PWE {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         
-        sb.append("Employee ID: ")
-            .append(this.empID)
+        sb.append("\nEmployee ID: ")
+            .append(this.empId)
             .append("\nEmployee Name: ")
             .append(this.empName)
-            .append("\nRate Per Piece: ")
+            .append("\nRate Per Piece: $")
             .append(this.ratePerPc)
             .append("\nTotal Pieces Finished: ")
             .append(this.totalPcsFin)
-            .append("\nTotal salary: ")
+            .append("\nTotal salary: $")
             .append(computeSalary());
         
         return sb.toString();

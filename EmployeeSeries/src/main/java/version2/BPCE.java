@@ -11,6 +11,10 @@ package version2;
 public class BPCE extends CE {
 
     private double baseSalary;
+    
+    public BPCE(){
+        
+    }
 
     public BPCE(double baseSalary) {
         this.baseSalary = baseSalary;
@@ -39,9 +43,15 @@ public class BPCE extends CE {
         return baseSalary + super.computeSalary();
     }
     @Override
-    public void display() {
-        System.out.println(this);
-        System.out.println("Base Salary: $" + getBaseSalary());
-        System.out.println("Salary: $" + computeSalary());
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append(super.toString())
+                .append("\nBase Salary: $")
+                .append(getBaseSalary())
+                .append("\nSalary: $")
+                .append(computeSalary());
+        
+        return sb.toString();
     }
 }

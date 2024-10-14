@@ -12,20 +12,21 @@ public class HE {
     private float totalHrsWorked;
     private double ratePerHour;
     private String empName;
-    private int empID;
+    private int empId;
 
     public HE() {
         
     }
-    public HE(String empName, int empID) {
-        this();
+    public HE(String empName, int empId) {
+        this.empName = empName;
+        this.empId = empId;
     }
   
-    public HE(float totalHrsWorked, double ratePerHour, String empName, int empID) {
+    public HE(float totalHrsWorked, double ratePerHour, String empName, int empId) {
         this.totalHrsWorked = totalHrsWorked;
         this.ratePerHour = ratePerHour;
         this.empName = empName;
-        this.empID = empID;
+        this.empId = empId;
     }
 
     public float getTotalHrsWorked() {
@@ -52,12 +53,12 @@ public class HE {
         this.empName = empName;
     }
 
-    public int getEmpID() {
-        return empID;
+    public int getEmpId() {
+        return empId;
     }
 
-    public void setEmpID(int empID) {
-        this.empID = empID;
+    public void setEmpId(int empId) {
+        this.empId = empId;
     }
    
     
@@ -85,15 +86,15 @@ public class HE {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         
-        sb.append("Employee ID: ")
-            .append(this.empID)
+        sb.append("\nEmployee ID: ")
+            .append(this.empId)
             .append("\nEmployee Name: ")
             .append(this.empName)
-            .append("\nRate Per Hour:")
+            .append("\nRate Per Hour: $")
             .append(this.ratePerHour)
             .append("\nTotal hours worked: ")
             .append(this.totalHrsWorked)
-            .append("\nTotal salary: ")
+            .append("\nTotal salary: $")
             .append(computeSalary());
         
         return sb.toString();
