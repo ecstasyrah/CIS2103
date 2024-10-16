@@ -8,7 +8,7 @@ package version2;
  *
  * @author User
  */
-public class PWE {
+public class PWE extends Employee{
     private int totalPcsFin;
     private double ratePerPc;
     private String empName;
@@ -17,18 +17,24 @@ public class PWE {
     public PWE() {
     }
 
-    public PWE(String empName, int empId) {
-        this.empId = empId;
-        this.empName = empName;
+    public PWE(int empId, String empName) {
+        super(empId,empName);
     }
 
     public PWE(int totalPcsFin, double ratePerPc, String empName, int empId) {
+        super(empId,empName);
         this.totalPcsFin = totalPcsFin;
         this.ratePerPc = ratePerPc;
-        this.empName = empName;
-        this.empId = empId;
     }
     
+    public PWE(String empName, int empId){
+        super(empName,empId);
+    }
+    
+    public PWE(int totalPcsFin){
+        this.totalPcsFin = totalPcsFin;
+    }
+  
     
     public int getTotalPcsFin() {
         return totalPcsFin;
@@ -44,22 +50,6 @@ public class PWE {
 
     public void setRatePerPc(double ratePerPc) {
         this.ratePerPc = ratePerPc;
-    }
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    public int getEmpId() {
-        return empId;
-    }
-
-    public void setEmpId(int empId) {
-        this.empId = empId;
     }
     
     public double computeSalary(){

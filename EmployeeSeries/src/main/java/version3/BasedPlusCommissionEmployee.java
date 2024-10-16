@@ -6,22 +6,33 @@ package version3;
 
 /**
  *
- * @author Tisay
+ * @author markalfredpardillo
  */
 public class BasedPlusCommissionEmployee extends CommissionEmployee {
     private double baseSalary;
 
-    public BasePlusCommissionEmployee(double baseSalary) {
+    public BasedPlusCommissionEmployee() {
+        super();
+    }
+
+    public BasedPlusCommissionEmployee(double totalSales, double baseSalary) {
+        super();
+        this.setTotalSales(totalSales);
         this.baseSalary = baseSalary;
     }
 
-    public BasePlusCommissionEmployee(float totalPiecesFinished, double totalSales, float ratePerPiece, double baseSalary) {
-        super(totalPiecesFinished, totalSales, ratePerPiece);
+    public BasedPlusCommissionEmployee(int empID, String fname, String mname, String lname) {
+        super(empID, fname, mname, lname);
+    }
+
+    public BasedPlusCommissionEmployee(String empName, int empID, double baseSalary, double totalSales) {
+        super();
+        this.setTotalSales(totalSales);
         this.baseSalary = baseSalary;
     }
 
-    public BasePlusCommissionEmployee(int empID, Name empName, LocalDate empDateHired, LocalDate empBirthDate, float totalPiecesFinished, double totalSales, float ratePerPiece, double baseSalary) {
-        super(empID, empName, empDateHired, empBirthDate, totalPiecesFinished, totalSales, ratePerPiece);
+    public BasedPlusCommissionEmployee(int empID, Name empName, double totalSales, double baseSalary) {
+        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
         this.baseSalary = baseSalary;
     }
 
@@ -32,15 +43,25 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
     public void setBaseSalary(double baseSalary) {
         this.baseSalary = baseSalary;
     }
-    
+
     @Override
     public double computeSalary() {
-        return baseSalary + super.computeSalary();
+        return super.computeSalary() + baseSalary;
     }
-    @Override
-    public void displayInfo() {
+
+    public void displayHourlyEmployee() {
         System.out.println(this);
-        System.out.println("Base Salary: $" + getBaseSalary());
-        System.out.println("Salary: $" + computeSalary());
+        System.out.println("Salary: " + computeSalary());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        
+            sb.append(super.toString())
+            .append("Base salary: ").append(getBaseSalary()).append("\n")
+            .append("Total sales: ").append(super.getTotalSales()).append("\n");
+        return sb.toString();
     }
 }
+

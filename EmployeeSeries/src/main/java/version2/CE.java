@@ -4,26 +4,33 @@
  */
 package version2;
 
+
 /**
  *
  * @author User
  */
-public class CE extends test{
+public class CE extends Employee{
     private double totalSales;
     private String empName;
     private int empId;
 
     public CE() {
     }
-    public CE(String empName, int empId) {
-        this.empId = empId;
-        this.empName = empName;
+    public CE(int empId, String empName) {
+        super(empId,empName);
     }
 
     public CE(double totalSales, String empName, int empId) {
+        super(empId,empName);
         this.totalSales = totalSales;
-        this.empName = empName;
-        this.empId = empId;
+    }
+    
+    public CE(double totalSales){
+        this.totalSales = totalSales;
+    }
+    
+    public CE(String empName, int empId){
+        super(empName, empId);
     }
 
     public double getTotalSales() {
@@ -32,22 +39,6 @@ public class CE extends test{
 
     public void setTotalSales(double totalSales) {
         this.totalSales = totalSales;
-    }
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    public int getEmpId() {
-        return empId;
-    }
-
-    public void setEmpId(int empId) {
-        this.empId = empId;
     }
     
     public double computeSalary(){
@@ -67,11 +58,10 @@ public class CE extends test{
         
         return rate * this.totalSales;
     }
-    
+
     public void display(){
         System.out.println(this);
     }
-    
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();

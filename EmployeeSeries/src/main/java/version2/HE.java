@@ -8,7 +8,7 @@ package version2;
  *
  * @author User
  */
-public class HE {
+public class HE extends Employee{
     private float totalHrsWorked;
     private double ratePerHour;
     private String empName;
@@ -18,15 +18,22 @@ public class HE {
         
     }
     public HE(String empName, int empId) {
-        this.empName = empName;
-        this.empId = empId;
+        super(empId,empName);
+    }
+    
+    public HE(String empName, int empId, double ratePerHour){
+        super(empId,empName);
+        this.ratePerHour = ratePerHour;
+    }
+    
+    public HE(float totalHrsWorked){
+        this.totalHrsWorked = totalHrsWorked;
     }
   
     public HE(float totalHrsWorked, double ratePerHour, String empName, int empId) {
+        super(empId,empName);
         this.totalHrsWorked = totalHrsWorked;
         this.ratePerHour = ratePerHour;
-        this.empName = empName;
-        this.empId = empId;
     }
 
     public float getTotalHrsWorked() {
@@ -44,23 +51,6 @@ public class HE {
     public void setRatePerHour(double ratePerHour) {
         this.ratePerHour = ratePerHour;
     }
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    public int getEmpId() {
-        return empId;
-    }
-
-    public void setEmpId(int empId) {
-        this.empId = empId;
-    }
-   
     
     public double computeSalary(){
         float excess;
@@ -78,9 +68,6 @@ public class HE {
         return salary;
     }
     
-    public void display(){
-        System.out.println(this);
-    }
     
     @Override
     public String toString(){
