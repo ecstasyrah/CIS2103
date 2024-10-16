@@ -9,59 +9,59 @@ package version3;
  * @author Tisay
  */
 public class Name {
-    private String fname;
-    private String mname;
-    private String lname;
+    private String firstN;
+    private String middleN;
+    private String lastN;
 
     public Name() {}
 
     public Name(String lname) {
-        this.lname = lname;
+        this.lastN = lname;
     }
 
     public Name(String lname, String fname) {
-        this.fname = fname;
-        this.lname = lname;
+        this.firstN = fname;
+        this.lastN = lname;
     }
 
     public Name(String lname, String fname, String mname) {
-        this.lname = lname;
-        this.fname = fname;
-        this.mname = mname;
+        this.lastN = lname;
+        this.firstN = fname;
+        this.middleN = mname;
     }
 
     public void setName(String lname, String fname, String mname) {
-        this.lname = lname;
-        this.fname = fname;
-        this.mname = mname;
+        this.lastN = lname;
+        this.firstN = fname;
+        this.middleN = mname;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstN(String firstN) {
+        this.firstN = firstN;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFirstN() {
+        return firstN;
     }
 
-    public void setMname(String mname) {
-        this.mname = mname;
+    public void setMiddleN(String middleN) {
+        this.middleN = middleN;
     }
 
-    public String getMname() {
-        return mname;
+    public String getMiddleN() {
+        return middleN;
     }
 
-    public char getMnameInitial() {
-        return mname.charAt(0);
+    public char getMiddleI() {
+        return middleN.charAt(0);
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setLastN(String lastN) {
+        this.lastN = lastN;
     }
 
-    public String getLname() {
-        return lname;
+    public String getLastN() {
+        return lastN;
     }
 
     public void displayName() {
@@ -70,10 +70,10 @@ public class Name {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder()
-            .append(getFname()).append(" ")
-            .append((getMname() == null) ? "" : getMnameInitial() + ". ")
-            .append(getLname());
+        StringBuilder sb = new StringBuilder();
+            sb.append(getFirstN()).append(" ")
+            .append((getMiddleN() == null) ? "" : getMiddleI() + ". ")
+            .append(getLastN());
         return sb.toString();
     }
 }

@@ -9,66 +9,83 @@ package version3;
  * @author markalfredpardillo
  */
 public class Main {
-    public static void main(String[] args) {
-        Name none = new Name(), ntwo = new Name("Urs", "Curs"), nthree = new Name("Nar", "Car", "Par"), nfour = new Name("Put"), nfive = new Name();
+    public static void main(String[] args){
+        Name n1 = new Name();
+        Name n2 = new Name("Palabrica");
+        Name n3 = new Name("Palabrica","Sarah");
+        Name n4 = new Name("Palabrica","Sarah","Ordonez");
+        Name n5 = new Name();
 
-        none.setFname("Ger");
-        none.setMname("Fer");
-        none.setLname("Per");
-        none.displayName();
+        n1.setFirstN("Lucy");
+        n1.setLastN("Chen");
+        n1.setMiddleN("Go");
 
-        ntwo.setMname("Alors");
-        ntwo.displayName();
+        n2.setMiddleN("Enad");
+        n2.setFirstN("Dot");
 
-        nthree.displayName();
+        n3.setMiddleN("Pardillo");
 
-        nfour.setFname("Dut");
-        nfour.setMname("Cut");
-        nfour.displayName();
+        n5.setName("Sar", "Halo", "Nolan");
 
-        nfive.setName("Presque", "Close", "Near");
-        nfive.displayName();
+        n1.displayName();
+        n2.displayName();
+        n3.displayName();
+        n4.displayName();
+        n5.displayName();
 
-        Date done = new Date(), dtwo = new Date(2004), dthree = new Date(1997, 1), dfour = new Date(2000, 2, 14), dfive = new Date();
+        Date d1= new Date();
+        Date d2 = new Date(2003);
+        Date d3 = new Date(2002, 12);
+        Date d4 = new Date(2,12,2006);
+        Date d5 = new Date();
 
-        done.setYear(1884);
-        done.setMonth(12);
-        done.setDay(24);
-        done.display();
+        System.out.println("\n");
 
-        dtwo.setMonth(4);
-        dtwo.setDay(14);
-        dtwo.display();
+        d1.setDay(25);
+        d1.setMonth(6);
+        d1.setYear(2003);
 
-        dthree.setDay(31);
-        dthree.display();
+        d2.setDay(24);
+        d2.setMonth(7);
 
-        dfour.display();
+        d3.setDay(30);
 
-        dfive.setDate(2024, 10, 14);
-        dfive.display();
+        d5.setDate(2012,2,21);
+
+        d1.display();
+        d2.display();
+        d3.display();
+        d4.display();
+        d5.display();
+
+        Employee e1 = new Employee();
+        Employee e2 = new Employee(1);
+        Employee e3 = new Employee(2,"Say","Ordonez");
+        Employee e4 = new Employee(3,"Sarah", "Maligro", "Ocupe");
+        Employee e5 = new Employee(5, "Justin","Bieber");
+
+        System.out.println("\n");
+
+        e1.setEmpID(9);
+        e1.setEmpName("Dot","Alfred","Pardz");
+        e1.setEmpDOB(2002, 7, 21);
+        e1.setEmpDOJ(2024,9,12);
+
+        e2.setEmpName("Jolie","Ocuper","Maligro");
+        e2.setEmpDOB(2003,1,5);
+        e2.setEmpDOJ(2022,9,15);
         
-        Employee pone = new Employee(), ptwo = new Employee(2), pthree = new Employee(3, "Jers", "Pers"), pfour = new Employee(4, "Pour", "Cour", "Dour"), pfive = new Employee(5, none, done, dthree);
+        e3.setEmpDOB(2000,12,25);
+        e3.setEmpDOJ(2021,2,27);
 
-        pone.setEmpID(1);
-        pone.setEmpName("Hup", "Cup", "Dup");
-        pone.setEmpDOB(2002, 5, 15);
-        pone.setEmpDOJ(2024, 7, 1);
-        pone.displayEmployee();
+        e4.setEmpDOJ(1999,6,8);
+        e4.setEmpDOJ(2023,11,18);
 
-        ptwo.setEmpName("Bup", "Tup", "Rup");
-        ptwo.setEmpDOB(2003, 2, 28);
-        ptwo.setEmpDOJ(2022, 12, 1);
-        ptwo.displayEmployee();
+        e1.displayEmployee();
+        e2.displayEmployee();
+        e3.displayEmployee();
+        e4.displayEmployee();
+        e5.displayEmployee();
 
-        pthree.setEmpDOB(2005, 9, 4);
-        pthree.setEmpDOJ(2021, 9, 4);
-        pthree.displayEmployee();
-
-        pfour.setEmpDOB(2001, 8, 12);
-        pfour.setEmpDOJ(2025, 7, 10);
-        pfour.displayEmployee();
-
-        pfive.displayEmployee();
     }
 }

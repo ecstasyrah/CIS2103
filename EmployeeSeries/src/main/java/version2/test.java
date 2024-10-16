@@ -4,7 +4,6 @@
  */
 package version2;
 
-import java.time.*;
 
 /**
  *
@@ -21,7 +20,7 @@ public class test {
         Employee E4 = new Employee(735);
         E4.setEmpName("Aika");
         Employee E5 = new Employee("Basha");
-        E4.setEmpId(827);
+        E5.setEmpId(827);
         System.out.println("----Employee----");
         E1.display();
         E2.display();
@@ -39,7 +38,7 @@ public class test {
         empHE2.setRatePerHour(100);
         empHE2.setTotalHrsWorked(45);
         
-        HE empHE3 = new HE("bea",513, 45);
+        HE empHE3 = new HE("Bea",513, 45);
         empHE3.setTotalHrsWorked(45);
         
         HE empHE4 = new HE(48);

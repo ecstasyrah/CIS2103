@@ -59,8 +59,10 @@ public class CE extends Employee{
         return rate * this.totalSales;
     }
 
+    @Override
     public void display(){
         System.out.println(this);
+        System.out.println(computeSalary());
     }
     @Override
     public String toString(){
@@ -69,9 +71,7 @@ public class CE extends Employee{
         sb.append("\nEmployee ID: ")
             .append(this.empId)
             .append("\nEmployee Name: ")
-            .append(this.empName)
-            .append("\nTotal sales: $")
-            .append(this.totalSales);
+            .append(this.empName);
         
         return sb.toString();
     }

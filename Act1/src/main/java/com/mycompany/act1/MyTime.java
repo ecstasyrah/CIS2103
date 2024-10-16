@@ -13,6 +13,8 @@ public class MyTime {
     private int minutes;
     private int seconds;
     private boolean meridian;
+    private boolean isPM;
+    private boolean isAM;
     
     
     public MyTime(int hrs, int min, int sec, boolean mer) {
@@ -53,6 +55,28 @@ public class MyTime {
     public void setSeconds(int seconds) {
         this.seconds = (seconds < 60 && seconds >= 0) ? seconds : 0;
     }
+
+    public MyTime(boolean isPM, boolean isAM) {
+        this.isPM = isPM;
+        this.isAM = isAM;
+    }
+
+    public boolean isIsPM() {
+        return isPM;
+    }
+
+    public void setIsPM(boolean isPM) {
+        this.isPM = isPM;
+    }
+
+    public boolean isIsAM() {
+        return isAM;
+    }
+
+    public void setIsAM(boolean isAM) {
+        this.isAM = isAM;
+    }
+    
     
     public void tickBySecond() {
         this.seconds++;
@@ -77,39 +101,38 @@ public class MyTime {
             meridian = !meridian;
         }
     }
+    
+    public void advanceTime(int seconds){
+        this.seconds += seconds;
+        
+        this.minutes += this.seconds /60;
+        this.seconds = this.seconds % 60;
+        
+        this.hours += this.minutes /60;
+        this.minutes = this.seconds % 60;
+        
+        if(this.hours>12){
+            this.isPM = !this.isPM;
+            this.hours -= 12;
+            this.hours = this.hours % 12;
+        }
+        
+        if(this.hours == 0){
+            this.hours = 12;
+     }
+    
+//
+//    @Override
+//     String toString(){
+//        return String.format("%02d:%02d:%02d", getHours, getMinutes, getSeconds);
+//    }
+   
+
+    }
 
     @Override
     public String toString() {
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        return "MyTime{" + "hours=" + hours + ", minutes=" + minutes + ", seconds=" + seconds + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + this.hours;
-        hash = 89 * hash + this.minutes;
-        hash = 89 * hash + this.seconds;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final MyTime other = (MyTime) obj;
-        if (this.hours != other.hours) {
-            return false;
-        }
-        if (this.minutes != other.minutes) {
-            return false;
-        }
-        return this.seconds == other.seconds;
-    }
 }

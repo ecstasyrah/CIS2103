@@ -68,6 +68,11 @@ public class HE extends Employee{
         return salary;
     }
     
+    @Override
+    public void display(){
+        System.out.println(this);
+    }
+    
     
     @Override
     public String toString(){

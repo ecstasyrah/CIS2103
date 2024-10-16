@@ -17,11 +17,11 @@ public class PieceWorkerEmployee extends Employee{
     }
 
     public PieceWorkerEmployee(int empID, Name empName) {
-        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
+        super(empID, empName.getFirstN(), empName.getMiddleN(), empName.getLastN());
     }
 
     public PieceWorkerEmployee(Name empName, int empID) {
-        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
+        super(empID, empName.getFirstN(), empName.getMiddleN(), empName.getLastN());
     }
 
     public PieceWorkerEmployee(double ratePerPiece, int totalPiecesFinished) {
@@ -30,7 +30,7 @@ public class PieceWorkerEmployee extends Employee{
     }
 
     public PieceWorkerEmployee(int empID, Name empName, int totalPiecesFinished, double ratePerPiece) {
-        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
+        super(empID, empName.getFirstN(), empName.getMiddleN(), empName.getLastN());
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
     }
@@ -62,9 +62,9 @@ public class PieceWorkerEmployee extends Employee{
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder()
-            .append(super.toString())
-            .append("Total hours worked: ").append(getFinishedPieces()).append("\n")
+        StringBuilder sb = new StringBuilder();
+            sb.append(super.toString())
+            .append("Total Pieces Finished: ").append(getFinishedPieces()).append("\n")
             .append("Rate per hour: ").append(getRate()).append("\n");
         return sb.toString();
     }

@@ -32,7 +32,7 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
     }
 
     public BasedPlusCommissionEmployee(int empID, Name empName, double totalSales, double baseSalary) {
-        super(empID, empName.getFname(), empName.getMname(), empName.getLname());
+        super(empID, empName.getFirstN(), empName.getMiddleN(), empName.getLastN());
         this.baseSalary = baseSalary;
     }
 

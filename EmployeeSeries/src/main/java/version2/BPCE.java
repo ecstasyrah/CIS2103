@@ -53,8 +53,7 @@ public class BPCE extends CE {
         sb.append(super.toString())
                 .append("\nBase Salary: $")
                 .append(getBaseSalary())
-                .append("\nSalary: $")
-                .append(computeSalary());
+                .append("\nTotal Salary: $");
         
         return sb.toString();
     }
