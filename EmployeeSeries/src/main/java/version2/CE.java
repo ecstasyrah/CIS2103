@@ -8,7 +8,7 @@ package version2;
  *
  * @author User
  */
-public class CE {
+public class CE extends test{
     private double totalSales;
     private String empName;
     private int empId;
