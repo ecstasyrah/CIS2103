@@ -30,7 +30,7 @@ public class BPCE extends CE {
     }
 
     public BPCE(double totalSales, String empName, int empId , double baseSalary) {
-        super(totalSales, empName,empId);
+        super(totalSales,empName,empId);
         this.baseSalary = baseSalary;
     }
 
