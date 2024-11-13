@@ -6,19 +6,19 @@ package version4;
 
 import java.time.LocalDate;
 
-public class BasedPlusCommissionEmployee extends CommissionEmployee {
+public class BasePlusCommissionEmployee extends CommissionEmployee {
 
     private double baseSalary;
 
-    public BasedPlusCommissionEmployee(double baseSalary) {
+    public BasePlusCommissionEmployee(double baseSalary) {
         this.baseSalary = baseSalary;
     }
-    public BasedPlusCommissionEmployee(int empID, Name empName, LocalDate empDateHired, LocalDate empBirthDate, float totalPiecesFinished, double totalSales, float ratePerPiece, double baseSalary) {
+    public BasePlusCommissionEmployee(int empID, Name empName, LocalDate empDateHired, LocalDate empBirthDate, float totalPiecesFinished, double totalSales, float ratePerPiece, double baseSalary) {
         super(empID, empName, empDateHired, empBirthDate, totalPiecesFinished, totalSales, ratePerPiece);
         this.baseSalary = baseSalary;
     }
 
-    public BasedPlusCommissionEmployee(Name empName, LocalDate empDateHired, LocalDate empBirthDate, float totalPiecesFinished, double totalSales, float ratePerPiece, double baseSalary) {
+    public BasePlusCommissionEmployee(Name empName, LocalDate empDateHired, LocalDate empBirthDate, float totalPiecesFinished, double totalSales, float ratePerPiece, double baseSalary) {
         super(empName, empDateHired, empBirthDate, totalPiecesFinished, totalSales, ratePerPiece);
         this.baseSalary = baseSalary;
     }
@@ -37,7 +37,7 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
     }
 
     @Override
-    public void displayInfo() {
+    public void display() {
         System.out.println(this);
     }
 
