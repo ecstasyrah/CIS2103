@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package version4;
+package version6;
 
 public class HourlyEmployee extends Employee {
     private float totalHoursWorked;
@@ -21,15 +21,19 @@ public class HourlyEmployee extends Employee {
     public HourlyEmployee(int empID, Name empName, Date empDOB, Date empDOJ, float totalHoursWorked) {
         super(empID, empName, empDOB, empDOJ);
         this.totalHoursWorked = totalHoursWorked;
+        this.ratePerHour = 0.0;
     }
 
     public HourlyEmployee(int empID, Name empName, Date empDOB, Date empDOJ, double ratePerHour) {
         super(empID, empName, empDOB, empDOJ);
+        this.totalHoursWorked = 0;
         this.ratePerHour = ratePerHour;
     }
 
     public HourlyEmployee(int empID, Name empName, Date empDOB, Date empDOJ) {
         super(empID, empName, empDOB, empDOJ);
+        this.totalHoursWorked = 0;
+        this.ratePerHour = 0.0;
     }
 
     public void setTotalHoursWorked(float totalHoursWorked) {
@@ -62,11 +66,12 @@ public class HourlyEmployee extends Employee {
         StringBuilder sb = new StringBuilder();
             sb.append(super.toString())
             .append("Total hours worked: ")
-            .append(getTotalHoursWorked())
-            .append("\n")
+                    .append(getTotalHoursWorked())
+                    .append("\n")
             .append("Rate per hour: ")
-            .append(getRatePerHour())
-            .append("\n");
+                    .append(getRatePerHour())
+                    .append("\n");
         return sb.toString();
     }
 }
+

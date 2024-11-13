@@ -22,11 +22,15 @@ public class Main {
                                                         , 500.2
                                                         , 12000.0));
         
+        ros.addEmployee(new PieceWorkerEmployee(4, new Name("Menendez", "Aiah", "Odin")
+                                                 , 100
+                                                 , 50));
+        
         ros.displayAllEmployees();
         System.out.println("\n");
         ros.removeEmployee(1);
         ros.displayAllEmployees();
-        ros.setEmployee(new Employee(4, "Palabrica", "Sarah", "Ordonez", 2004, 07, 30), 1);
+        ros.setEmployee(new Employee(5, "Palabrica", "Sarah", "Ordonez", 2004, 07, 30), 1);
         System.out.println("\n");
         ros.displayAllEmployees();
     }

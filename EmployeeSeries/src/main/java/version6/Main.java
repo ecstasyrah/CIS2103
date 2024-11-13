@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package version4;
+package version6;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,18 +21,16 @@ public class Main {
         ros.addEmployee(new BasePlusCommissionEmployee(3, new Name("Lim", "Mika", "Sho")
                                                         , 500.2
                                                         , 12000.0));
-        
         ros.addEmployee(new PieceWorkerEmployee(4, new Name("Menendez", "Aiah", "Odin")
                                                  , 100
-                                                 , 50));
+                                                 , 50)); 
         
         ros.displayAllEmployees();
         System.out.println("\n");
         ros.removeEmployee(1);
         ros.displayAllEmployees();
-        ros.setEmployee(new Employee(5, "Palabrica", "Sarah", "Ordonez", 2004, 07, 30), 1);
+        ros.setEmployee(new Employee("Palabrica", "Sarah", "Ordonez", 2004, 07, 30), 5);
         System.out.println("\n");
         ros.displayAllEmployees();
     }
 }
-
