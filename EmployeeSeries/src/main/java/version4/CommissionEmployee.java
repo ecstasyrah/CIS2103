@@ -1,93 +1,64 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package version4;
 
-import java.time.LocalDate;
-
 public class CommissionEmployee extends Employee {
-
-    private float totalPiecesFinished;
     private double totalSales;
-    private float ratePerPiece;
 
     public CommissionEmployee() {
+        super();
     }
 
-    public CommissionEmployee(Name empName, LocalDate empDateHired, LocalDate empBirthDate, float totalPiecesFinished, double totalSales, float ratePerPiece) {
-        super(empName, empDateHired, empBirthDate);
-        this.totalPiecesFinished = totalPiecesFinished;
+    public CommissionEmployee(int empID) {
+        super(empID);
+    }
+
+    public CommissionEmployee(int empID, String fname, String mname, String lname) {
+        super(empID, fname, mname, lname);
+    }
+
+    public CommissionEmployee(int empID, Name empName, Date empDOB, Date empDOJ) {
+        super(empID, empName, empDOB, empDOJ);
+    }
+
+    public CommissionEmployee(int empID, Name empName, Date empDOB, Date empDOJ, double totalSales) {
+        super(empID, empName, empDOB, empDOJ);
         this.totalSales = totalSales;
-        this.ratePerPiece = ratePerPiece;
-    }
-    
-    
-
-    public CommissionEmployee(float totalPiecesFinished, double totalSales, float ratePerPiece) {
-        this.totalPiecesFinished = totalPiecesFinished;
-        this.totalSales = totalSales;
-        this.ratePerPiece = ratePerPiece;
-    }
-
-    public CommissionEmployee(int empID, Name empName, LocalDate empDateHired, LocalDate empBirthDate, float totalPiecesFinished, double totalSales, float ratePerPiece) {
-        super(empID, empName, empDateHired, empBirthDate);
-        this.totalPiecesFinished = totalPiecesFinished;
-        this.totalSales = totalSales;
-        this.ratePerPiece = ratePerPiece;
-    }
-
-    public float getTotalPiecesFinished() {
-        return totalPiecesFinished;
-    }
-
-    public void setTotalPiecesFinished(float totalPiecesFinished) {
-        this.totalPiecesFinished = totalPiecesFinished;
-    }
-
-    public double getTotalSales() {
-        return totalSales;
     }
 
     public void setTotalSales(double totalSales) {
         this.totalSales = totalSales;
     }
 
-    public float getRatePerPiece() {
-        return ratePerPiece;
-    }
-
-    public void setRatePerPiece(float ratePerPiece) {
-        this.ratePerPiece = ratePerPiece;
+    public double getTotalSales() {
+        return totalSales;
     }
 
     public double computeSalary() {
-        double rate = 0.05;
-
-        if (totalSales < 100_000) {
-            rate = 0.20;
-        } else if (totalSales < 500_000) {
-            rate = 0.30;
+        double salary;
+        if (totalSales < 10000) {
+            salary = totalSales * 0.05;
+        } else if (totalSales < 100000 && totalSales >= 10000) {
+            salary = totalSales * 0.1;
+        } else if (totalSales < 1000000) {
+            salary = totalSales * 0.2;
         } else {
-            rate = 0.50;
+            salary = totalSales * 0.3;
         }
-
-        return totalSales * rate;
+        return salary;
     }
 
-    @Override
-    public void displayInfo() {
+    public void display() {
         System.out.println(this);
+        System.out.println("Salary: " + computeSalary());
     }
 
     @Override
     public String toString() {
-        return super.toString()
-                + "\nTotal Pieces Finished: " + getTotalPiecesFinished()
-                + "\nTotal Sales: " + getTotalSales()
-                + "\nRate per Piece: $" + getRatePerPiece()
-                + "\nSalary: $" + computeSalary()
-                + "\n";
-
+        StringBuilder sb = new StringBuilder();
+            sb.append(super.toString())
+            .append("Total sales: ")
+            .append(getTotalSales())
+            .append("\n");
+        return sb.toString();
     }
 }
