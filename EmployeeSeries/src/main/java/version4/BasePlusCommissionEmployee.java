@@ -35,7 +35,8 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     public void setBaseSalary(double baseSalary) {
         this.baseSalary = baseSalary;
     }
-
+    
+    @Override
     public void display() {
         System.out.println(this);
         System.out.println("Salary: " + computeSalary());
