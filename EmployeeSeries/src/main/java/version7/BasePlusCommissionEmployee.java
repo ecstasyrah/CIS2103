@@ -1,4 +1,10 @@
-package version4;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package version7;
+
+import version6.*;
 
 public class BasePlusCommissionEmployee extends CommissionEmployee {
     private double baseSalary;
@@ -36,14 +42,15 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
         this.baseSalary = baseSalary;
     }
 
-    public void display() {
-        System.out.println(this);
-        System.out.println("Salary: " + computeSalary());
-    }
-
     @Override
     public double computeSalary() {
         return super.computeSalary() + baseSalary;
+    }
+
+    @Override
+    public void display() {
+        System.out.println(this);
+        System.out.println("Salary: " + computeSalary());
     }
 
     @Override
@@ -51,11 +58,11 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
         StringBuilder sb = new StringBuilder();
             sb.append(super.toString())
             .append("Base salary: ")
-            .append(getBaseSalary())
-            .append("\n")
-            .append("Total sales: ")
-            .append(super.getTotalSales())
+            .append(getBaseSalary()).append("\n")
+            .append("Total sales: ").append(super.getTotalSales())
             .append("\n");
         return sb.toString();
     }
 }
+
+

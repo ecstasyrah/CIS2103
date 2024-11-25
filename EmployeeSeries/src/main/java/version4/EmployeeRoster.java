@@ -39,7 +39,7 @@ public class EmployeeRoster {
                 for (int j = i; j + 1 < count; j++) {
                     empList[j] = empList[j + 1];
                 }
-                count -= i + 1;
+                count -= 1;
                 return e;
             }
         }
@@ -94,7 +94,7 @@ public class EmployeeRoster {
                                                                      , empList[i].getEmpName()
                                                                      , empList[i].getEmpDOB()
                                                                      , empList[i].getEmpHired()
-                                                                     , empList[i].computeSalary());
+                                                                     , ((HourlyEmployee) empList[i]).computeSalary());
             }
         }
     }
@@ -107,7 +107,7 @@ public class EmployeeRoster {
                                                                      , empList[i].getEmpName()
                                                                      , empList[i].getEmpDOB()
                                                                      , empList[i].getEmpHired()
-                                                                     , empList[i].computeSalary());
+                                                                     , ((CommissionEmployee) empList[i]).computeSalary());
             }
         }
     }
@@ -120,7 +120,7 @@ public class EmployeeRoster {
                                                                      , empList[i].getEmpName()
                                                                      , empList[i].getEmpDOB()
                                                                      , empList[i].getEmpHired()
-                                                                     , empList[i].computeSalary());
+                                                                     , ((BasePlusCommissionEmployee) empList[i]).computeSalary());
             }
         }
     }
@@ -133,7 +133,7 @@ public class EmployeeRoster {
                                                                      , empList[i].getEmpName()
                                                                      , empList[i].getEmpDOB()
                                                                      , empList[i].getEmpHired()
-                                                                     , empList[i].computeSalary());
+                                                                     , ((PieceWorkerEmployee) empList[i]).computeSalary());
             }
         }
     }
@@ -141,12 +141,22 @@ public class EmployeeRoster {
     public void displayAllEmployees() {
         System.out.printf("%-10s %-20s %-14s %-14s %-14s %-32s\n", "ID", "Name", "Date Joined", "Birth Date", "Salary", "Type of Employee");
         for (int i = 0; i < count; i++) {
-            System.out.printf("%-10d %-20s %-14s %-14s %-14.2f %-32s\n", empList[i].getEmpID()
-                                                                       , empList[i].getEmpName()
-                                                                       , empList[i].getEmpDOB()
-                                                                       , empList[i].getEmpHired()
-                                                                       , empList[i].computeSalary()
-                                                                       , empList[i].getClass().getSimpleName());
+            System.out.printf("%-10d %-20s %-14s %-14s\n", empList[i].getEmpID()
+                                                         , empList[i].getEmpName()
+                                                         , empList[i].getEmpDOB()
+                                                         , empList[i].getEmpHired());
+            if(empList[i] instanceof HourlyEmployee) {
+                System.out.printf("%-14.2f ", ((HourlyEmployee) empList[i]).computeSalary());
+            } else if(empList[i] instanceof PieceWorkerEmployee) {
+                System.out.printf("%-14.2f ", ((PieceWorkerEmployee) empList[i]).computeSalary());
+            } else if(empList[i] instanceof CommissionEmployee) {
+                System.out.printf("%-14.2f ", ((CommissionEmployee) empList[i]).computeSalary());
+            } else if(empList[i] instanceof BasePlusCommissionEmployee) {
+                System.out.printf("%-14.2f ", ((BasePlusCommissionEmployee) empList[i]).computeSalary());
+            }
+            
+            
+            System.out.printf("%-32s\n", empList[i].getClass().getSimpleName());
         }
     }
 }

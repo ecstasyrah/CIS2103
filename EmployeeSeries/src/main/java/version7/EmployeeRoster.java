@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package version5;
+package version7;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public class EmployeeRoster {
                 return empList.remove(i);
             }
         }
-        return new Employee();
+        return null;  
     }
 
     public int countHE() {
@@ -142,4 +142,3 @@ public class EmployeeRoster {
     }
 }
 
-    

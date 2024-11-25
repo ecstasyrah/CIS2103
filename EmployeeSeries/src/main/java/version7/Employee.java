@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package version4;
+package version7;
 
-public class Employee {
+public abstract class Employee implements ComputeSalary{
     private int empID;
     private Name empName;
     private Date empDOB;
@@ -82,19 +82,25 @@ public class Employee {
     public Date getEmpHired() {
         return empHired;
     }
-    
-
-    public void displayEmployee() {
-        System.out.println(this);
-    }
+   
+    public abstract void display();
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-            sb.append("Employee ID: ").append(getEmpID()).append("\n")
-            .append("Employee name: ").append(getEmpName()).append("\n")
-            .append("Join date: ").append(empHired.toString()).append("\n")
-            .append("Date of birth: ").append(empDOB.toString()).append("\n");
+            sb.append("Employee ID: ")
+                    .append(getEmpID())
+                    .append("\n")
+            .append("Employee name: ")
+                    .append(getEmpName())
+                    .append("\n")
+            .append("Join date: ")
+                    .append(empHired.toString())
+                    .append("\n")
+            .append("Date of birth: ")
+                    .append(empDOB.toString())
+                    .append("\n");
         return sb.toString();
     }
 }
+
